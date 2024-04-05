@@ -82,7 +82,10 @@
   }
   #quote span {
     font-size: 0.8rem;
+  }
+  #quote {
     padding: 0.2rem;
+    padding-bottom: 0.1rem;
   }
   #login-form div input {
     border: 0.3remsolid oklch(30% 0.6 200 / 0.5);
@@ -91,5 +94,6 @@
   #weather {
     top: 5rem;
     font-size: 0.8rem;
+    width: 10rem;
   }
 }
