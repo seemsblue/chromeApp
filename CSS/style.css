@@ -1,0 +1,92 @@
+.hidden {
+  display: none;
+}
+
+/*css는 주석이 //가 안되넹 */
+#bgImg {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: -1;
+  opacity: 80%;
+}
+
+#clock {
+  position: fixed;
+  left: 2rem;
+  top: 0rem;
+  color: blanchedalmond;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 2.9rem;
+  background-color: oklch(0 0 0 / 0.5);
+  border-radius: 30px;
+  padding: 1rem;
+  padding-bottom: 2rem;
+  opacity: 87%;
+  z-index: 1;
+}
+#weather {
+  color: blanchedalmond;
+  font-family: "Courier New", Courier, monospace;
+  position: fixed;
+  left: 3.2rem;
+  top: 6.9rem;
+  z-index: 3;
+}
+#quote {
+  background-color: oklch(0 0 0 / 0.5);
+  color: bisque;
+  font-weight: bold;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  opacity: 77%;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
+  padding: 0%;
+  text-align: center;
+}
+#login-form div input {
+  border-radius: 0.8rem;
+  border: 0.3rem solid oklch(30% 0.6 200 / 0.5);
+  font-size: 2rem;
+  background-color: oklch(100 0 0 /0.8);
+}
+#login-form {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+#todo-aside {
+  float: right;
+  background-color: rgb(255, 235, 205, 0.7);
+  padding: 1rem;
+  padding-right: 1.6rem;
+  margin: 2rem;
+  margin-right: 0.2rem;
+  margin-top: 2rem;
+  border: 0.5rem solid oklch(34, 57, 70);
+  border-style: inset;
+  border-radius: 1rem;
+}
+@media screen and (max-width: 80rem) {
+  #clock {
+    font-size: 2rem;
+  }
+  #quote span {
+    font-size: 0.7rem;
+  }
+  #login-form div input {
+    border: 0.3remsolid oklch(30% 0.6 200 / 0.5);
+    font-size: 1.4rem;
+  }
+  #weather {
+    top: 5rem;
+    font-size: 0.8rem;
+  }
+}
