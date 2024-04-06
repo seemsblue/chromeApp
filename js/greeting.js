@@ -16,8 +16,10 @@ function handleLinkClick(event) {
 function paintGreetings(username) {
   greeting.innerText = `Hello ${username}`;
   greeting.classList.remove("hidden");
-  document.querySelector("#todo-form").classList.remove(HIDDEN_CLASSNAME);
-  document.querySelector("#todo-list").classList.remove(HIDDEN_CLASSNAME);
+  document.querySelector("#todo-aside").classList.remove(HIDDEN_CLASSNAME);
+  setTimeout(function () {
+    document.querySelector("#todo-aside").style.opacity = "1";
+  }, 100);
 }
 
 const savedUsername = localStorage.getItem(USERNAM_KEY);
@@ -27,3 +29,15 @@ if (savedUsername === null) {
 } else {
   paintGreetings(savedUsername);
 }
+
+const greetingMouseover = () => {
+  console.log("a");
+  greeting.style.opacity = "0";
+  setTimeout(function () {
+    greeting.classList.add(HIDDEN_CLASSNAME);
+  }, 3000);
+  greeting.removeEventListener("mouseover", greetingMouseover);
+};
+
+greeting.addEventListener("mouseover", greetingMouseover);
+greeting.style.transition = "opacity 3s";

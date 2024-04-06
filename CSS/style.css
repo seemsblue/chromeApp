@@ -44,13 +44,14 @@
   font-weight: bold;
   font-family: Georgia, "Times New Roman", Times, serif;
   opacity: 77%;
-  position: absolute;
+  position: fixed;
   left: 0px;
   bottom: 0px;
   width: 100%;
-  padding: 0%;
   text-align: center;
   padding: 0.5rem;
+  padding-top: 1rem;
+  transition: bottom 2s;
 }
 #login-form div input {
   border-radius: 0.8rem;
@@ -66,7 +67,7 @@
 }
 #todo-aside {
   float: right;
-  background-color: rgb(255, 235, 205, 0.7);
+  background-color: rgb(255, 235, 205, 0.5);
   padding: 1rem;
   padding-right: 1.6rem;
   margin: 2rem;
@@ -75,6 +76,13 @@
   border: 0.5rem solid oklch(34, 57, 70);
   border-style: inset;
   border-radius: 1rem;
+  transition: opacity 4s, height 4s;
+}
+#todo-list {
+  list-style-type: circle;
+  padding-left: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 540;
 }
 @media screen and (max-width: 80rem) {
   #clock {

@@ -1,13 +1,12 @@
 const quotes = [
   {
-    quote:
-      "[도움말] 내셔 남작은 자신의 뒤에 있는 챔피언에게 훨씬 더 큰 피해를 줍니다.",
-    author: "",
+    quote: " 내셔 남작은 자신의 뒤에 있는 챔피언에게 훨씬 더 큰 피해를 줍니다.",
+    author: "[도움말]",
   },
   {
     quote:
-      '[알고 계셨나요?] 트런들이 손에 넣은 얼음 정수의 몽둥이에는 "뼈분쇄자"라는 이름이 붙었습니다.',
-    author: "",
+      ' 트런들이 손에 넣은 얼음 정수의 몽둥이에는 "뼈분쇄자"라는 이름이 붙었습니다.',
+    author: "[알고 계셨나요?]",
   },
   {
     quote: "미래를 예측하는 가장 좋은 방법은 미래를 발명하는 것이다",
@@ -126,11 +125,40 @@ const quotes = [
     author: "Sam Levenson",
   },
 ];
+const quoteBox = document.querySelector("#quote");
+let isHide = false;
+function hide() {
+  console.log(quoteBox.clientHeight);
+  if (isHide) {
+    quoteBox.style.bottom = "0px";
+    setTimeout(() => {
+      isHide = false;
+    }, 2300);
+  } else {
+    quoteBox.style.bottom = `-${quoteBox.clientHeight - 11}px`;
+    setTimeout(() => {
+      isHide = true;
+      setQuote();
+    }, 2300);
+  }
+}
 
 const quote = document.querySelector("#quote span:first-child");
 
-const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)];
+function randQuote() {
+  return quotes[Math.floor(Math.random() * quotes.length)];
+}
 
-quote.innerHTML = `${todaysQuote.quote}${
-  todaysQuote.author != "" ? "<br />" + todaysQuote.author : ""
-}`;
+function setQuote() {
+  const todaysQuote = randQuote();
+  quote.innerHTML = `${todaysQuote.quote}${
+    todaysQuote.author != "" ? "<br />" + todaysQuote.author : ""
+  }`;
+  if (isHide) {
+    quoteBox.style.bottom = `-${quoteBox.clientHeight - 11}px`;
+  }
+}
+
+setQuote();
+
+quoteBox.addEventListener("click", hide);

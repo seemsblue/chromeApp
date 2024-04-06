@@ -19,23 +19,24 @@
       id="greeting"
       class="hidden"
       style="
+        font-size: 3rem;
         position: fixed;
-        right: 8rem;
-        bottom: 3rem;
+        right: 10rem;
+        bottom: 4rem;
         text-shadow: 0.3rem 0.2rem 2.7px gray;
       "
     ></h1>
-    <aside id="todo-aside">
-      <form id="todo-form" class="hidden">
+    <aside id="todo-aside" class="hidden" style="opacity: 0">
+      <form id="todo-form">
         <input
           type="text"
           placeholder="Wirte a To do and Press Enter"
           req
-          maxlength="22"
+          maxlength="52"
           style="border-radius: 0.7rem; width: 17rem; height: 1.2rem"
         />
       </form>
-      <ul id="todo-list" class="hidden"></ul>
+      <ul id="todo-list"></ul>
     </aside>
     <div id="quote">
       <span></span><br />
