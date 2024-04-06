@@ -94,7 +94,7 @@ if (savedTodos) {
   todos = parsedTodos;
 }
 const showTuto = localStorage.getItem("tutorial");
-if (showTuto === null || showTuto === "true") {
+function paintTutorial() {
   const tutorial = [
     {
       text: "Tutorial",
@@ -128,4 +128,11 @@ if (showTuto === null || showTuto === "true") {
   ];
   tutorial.map(paintToDo);
   localStorage.setItem("tutorial", "false");
+}
+if (
+  showTuto === null ||
+  showTuto === "true" ||
+  localStorage.getItem("todos") === null
+) {
+  paintTutorial();
 }

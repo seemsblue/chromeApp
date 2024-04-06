@@ -124,17 +124,47 @@ const quotes = [
     quote: "시계를 보지는 말되, 따라는 해봐. 시계처럼 할 일을 계속하란 얘기야.",
     author: "Sam Levenson",
   },
+  {
+    quote:
+      "수천 명의 사람이 사랑 없이 살아왔지만, 그 누구도 물 없이 살 수는 없었다.",
+    author: "Wystan Hugh Auden",
+  },
+  {
+    quote:
+      "글을 쓰는 것은 공유하는 것을 의미한다. 글을 쓰는 것은 생각, 아이디어, 그리고 의견을 공유하기를 바라는 인생사의 일부이다.",
+    author: "Paulo Coelho",
+  },
+  {
+    quote: "작문은 쉽다네. 잘못된 단어만 줄을 그어 지우면 되니까.",
+    author: "Mark Twain",
+  },
+  {
+    quote: "방황하는 모든 이들이 길을 잃는 것은 아니다.",
+    author: "J.R.R.Tolkien",
+  },
+  {
+    quote:
+      "단 한번이라도 날아 보았다면, 땅을 걷게 되어도 눈은 하늘로 가 있으리라. 가 보았고 언젠가 돌아가고 싶어 하는 그곳으로.",
+    author: "Leonardo da Vinci",
+  },
+  {
+    quote:
+      "벤자민 프랭클린이 아무리 전기를 발견했어도, 돈은 계랑기를 발명한 사람이 벌었을 거야.",
+    author: "Earl Wilson",
+  },
 ];
 const quoteBox = document.querySelector("#quote");
 let isHide = false;
 function hide() {
   console.log(quoteBox.clientHeight);
   if (isHide) {
+    isHide = null;
     quoteBox.style.bottom = "0px";
     setTimeout(() => {
       isHide = false;
     }, 2300);
-  } else {
+  } else if (isHide === false) {
+    isHide = null;
     quoteBox.style.bottom = `-${quoteBox.clientHeight - 11}px`;
     setTimeout(() => {
       isHide = true;
